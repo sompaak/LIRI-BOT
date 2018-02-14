@@ -1,0 +1,10 @@
+{
+  "name": "",
+  "version": "",
+  "dependencies": {
+    "request": "^2.83.0",
+    "require": "^2.4.20",
+    "twit": "^2.2.9",
+    "twitter": "^1.7.1"
+  }
+}
