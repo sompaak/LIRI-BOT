@@ -2,6 +2,7 @@
   "name": "",
   "version": "",
   "dependencies": {
+    "node-spotify-api": "^1.0.7",
     "request": "^2.83.0",
     "require": "^2.4.20",
     "twit": "^2.2.9",
