@@ -2,7 +2,7 @@ var Twitter = require('twitter');
 
 var fs = require("fs")
 
-var name = process.argv[2]
+
 
 var twitterClient = new Twitter({
   consumer_key: 'M39K6oj5hx7c1DtE9I2KJNYWL',
@@ -62,7 +62,7 @@ function getMovieInfo(){
     
   if(!movieName){
 
-    movieName = "harrypotter"
+    movieName = "harry potter"
   }
   var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
   request(queryUrl, function(error, response, body) {
@@ -72,7 +72,7 @@ function getMovieInfo(){
           console.log("Movie title: " + result.Title);
           console.log("Release Year: " + result.Year);
           console.log("imdb rating :" + result.imdbRating)
-          //console.log(result.Ratings[1].Source, result.Ratings[1].Value )
+          console.log(result.Ratings[1].Source, result.Ratings[1].Value )
            console.log("country: " + result.Country); 
            console.log("Language: " + result.Language); 
           console.log("Rating: " + result.Rated);
@@ -92,7 +92,7 @@ function getSpotifySongs(){
 
   if(!songName){
 
-    songName = "not afraid"
+    songName = "the hills"
   }
    
   spotify.search({ type: 'track', query: songName }, function(err, data) {
@@ -128,22 +128,20 @@ function doWhatItSays(){
    
     var options = data.split(",");
 
-    var myTweets = options[0]
-    var spotifyThisSong = options[1]
-    var movieThis = options[2]
+      for (var i = 0 ; i<options.length; i++){
+          switch(options[i]){
 
+          case "my-tweets":
+            getTweets()
+            break;
+          case "spotify-this-song":
+            getSpotifySongs()
+            break
+          case "movie-this":
+            getMovieInfo()
+            break 
 
-    switch(process.argv[3]){
-
-    case myTweets:
-      getTweets()
-      break;
-    case spotifyThisSong:
-      getSpotifySongs()
-      break
-    case movieThis:
-      getMovieInfo()
-      break 
+            }
 
     }
     
