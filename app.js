@@ -62,7 +62,7 @@ function getMovieInfo(){
     
   if(!movieName){
 
-    movieName = "harry potter"
+    movieName = "harrypotter"
   }
   var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
   request(queryUrl, function(error, response, body) {
@@ -89,11 +89,20 @@ function getMovieInfo(){
 function getSpotifySongs(){
 
   var songName = stringBuilder()
+
+  if(!songName){
+
+    songName = "not afraid"
+  }
    
   spotify.search({ type: 'track', query: songName }, function(err, data) {
     if (err) {
       return console.log('Error occurred: ' + err);
     }
+
+
+
+
      
     for (var i = 0; i< data.tracks.items.length; i++){
       console.log(data.tracks.items[i].artists[0].name); 
