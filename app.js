@@ -1,14 +1,24 @@
-require("dotenv").config()
-var fs = require("fs")
-var request = require("request");
-var Spotify = require('node-spotify-api');
 var Twitter = require('twitter');
 
+var fs = require("fs")
 
-var keys = require("./keys.js")
-var twitterClient = new Twitter(keys.twitter)
-console.log(keys.twitter)
-var spotifyClient = new Spotify(keys.spotify)
+var name = process.argv[2]
+
+var twitterClient = new Twitter({
+  consumer_key: 'M39K6oj5hx7c1DtE9I2KJNYWL',
+  consumer_secret: '4BhKpluyTriEJIq6Y14NedlsOBZhfqgVlqy5pXHRd0UwrjmcuY',
+  access_token_key: '240497888-BhhrWyyzMSptodKdHRiNBum3ziD8KdVUX0fstyHa',
+  access_token_secret: 'rWiUAz9Wmrmmo76Y91XSOk6E2c1wNQ5aGYuMrM3GlDblw'
+});
+
+var Spotify = require('node-spotify-api');
+     
+var spotify = new Spotify({
+  id: "0e7736924c084d1db7f7a500ad0b6da3",
+  secret:"a62f853c5dc24e468e3c1b8f18caa484"
+});
+
+var request = require("request");
 
 function stringBuilder(){
   var returnString = ""
@@ -24,22 +34,27 @@ function stringBuilder(){
   return returnString
 }
 
+
+
+var handle = process.argv[3]
+
 function getTweets(){
-  var params = {screen_name: "nodejs"};
-  twitterClient.get('statuses/user_timeline', params, function(error, tweets, response) {
-    
-    if (!error) {
-      for ( var i = 0; i < tweets.length; i++){
-        console.log("Tweet " + i)
-        console.log("Kevin Hart posted: ")
-        console.log(tweets[i].text);
-        console.log(" ")
-        console.log("Tweet Posted At: ")
-        console.log(tweets[i].created_at);
-        console.log("__________________")
-      }            
-    }
-  });
+    var params = {screen_name: handle};
+    twitterClient.get('statuses/user_timeline', params, function(error, tweets, response) {
+      if (!error) {
+          for ( var i = 0; i < tweets.length; i++){
+                console.log("Tweet " + i)
+                console.log("Kevin Hart posted: ")
+                console.log(tweets[i].text);
+                console.log(" ")
+                console.log("Tweet Posted At: ")
+                console.log(tweets[i].created_at);
+                console.log("__________________")
+
+          }
+              
+      }
+    });
 }
 
 function getMovieInfo(){
@@ -49,7 +64,7 @@ function getMovieInfo(){
     
   if(!movieName){
 
-    movieName = "harry potter"
+    movieName = "harrypotter"
   }
   var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
   request(queryUrl, function(error, response, body) {
@@ -59,7 +74,7 @@ function getMovieInfo(){
           console.log("Movie title: " + result.Title);
           console.log("Release Year: " + result.Year);
           console.log("imdb rating :" + result.imdbRating)
-          console.log(result.Ratings[1].Source, result.Ratings[1].Value )
+          //console.log(result.Ratings[1].Source, result.Ratings[1].Value )
            console.log("country: " + result.Country); 
            console.log("Language: " + result.Language); 
           console.log("Rating: " + result.Rated);
@@ -79,10 +94,10 @@ function getSpotifySongs(){
 
   if(!songName){
 
-    songName = "the hills"
+    songName = "not afraid"
   }
    
-  spotifyClient.search({ type: 'track', query: songName }, function(err, data) {
+  spotify.search({ type: 'track', query: songName }, function(err, data) {
     if (err) {
       return console.log('Error occurred: ' + err);
     }
@@ -115,20 +130,22 @@ function doWhatItSays(){
    
     var options = data.split(",");
 
-      for (var i = 0 ; i<options.length; i++){
-          switch(options[i]){
+    var myTweets = options[0]
+    var spotifyThisSong = options[1]
+    var movieThis = options[2]
 
-          case "my-tweets":
-            getTweets()
-            break;
-          case "spotify-this-song":
-            getSpotifySongs()
-            break
-          case "movie-this":
-            getMovieInfo()
-            break 
 
-            }
+    switch(process.argv[3]){
+
+    case myTweets:
+      getTweets()
+      break;
+    case spotifyThisSong:
+      getSpotifySongs()
+      break
+    case movieThis:
+      getMovieInfo()
+      break 
 
     }
     
