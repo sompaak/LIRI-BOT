@@ -34,8 +34,6 @@ function stringBuilder(){
   return returnString
 }
 
-
-
 var handle = process.argv[3]
 
 function getTweets(){
@@ -101,10 +99,6 @@ function getSpotifySongs(){
     if (err) {
       return console.log('Error occurred: ' + err);
     }
-
-
-
-
      
     for (var i = 0; i< data.tracks.items.length; i++){
       console.log(data.tracks.items[i].artists[0].name); 
