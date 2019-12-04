@@ -23,7 +23,7 @@ This module is meant for use with Terraform 0.12
 - [Terraform](https://www.terraform.io/downloads.html) >= 0.12.x
 - terraform-provider-AWS plugin 2.40.x
 
-#### Specifying credentials
+### Specifying credentials
    
 Credentials must be provided Implicitly by the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables.
 The region within the provide block must be provided.
@@ -34,6 +34,20 @@ The region within the provide block must be provided.
    version = "~> 2.40"
    }
 ```
+### backend
+
+ ```terraform
+   Region must be provided
+   terraform {
+      backend "s3" {
+         bucket = "mybucket"
+         key    = "path/to/my/key"
+         region = "us-east-1"
+       }
+}
+```
+
+
 ### Execution points
 
 #### Lambda
