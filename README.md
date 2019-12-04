@@ -7,10 +7,7 @@
     * [Execution points](Execution-points)
          * [Lambda](#Lambda)
          * [Cloudwatch](#Cloudwatch)
-            
-      
-         
-    
+               
 <!-- TOC -->
 ## Introduction
 
