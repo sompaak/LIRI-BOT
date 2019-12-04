@@ -18,5 +18,5 @@ This module is meant for use with Terraform 0.12
 
 In order to execute the lambda execution point you must have the following IAM permissions:
 
-`AWSLambdaFullAccess`
-`IAMFullAccess`
+-`AWSLambdaFullAccess`
+-`IAMFullAccess`
