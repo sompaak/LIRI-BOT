@@ -30,14 +30,11 @@ This module is meant for use with Terraform 0.12
 
 #### Specifying credentials
 
-The Project Factory uses external scripts to perform a few tasks that are not implemented
-by Terraform providers. Because of this the Project Factory needs a copy of service account
-credentials to pass to these scripts. Credentials can be provided via two mechanisms:
    
-1. Implicitly provided by the  `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables:
+Credentials must be provided Implicitly by the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables:
    ```terraform
    AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and  must be set in the environment before Terraform is run.
-   The region in the provider must be specified
+   The region in the provider must be specified.
    provider "aws" {
    region  = "us-west-2"
    version = "~> 2.40"
