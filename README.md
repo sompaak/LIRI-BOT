@@ -39,8 +39,7 @@ Credentials must be provided Implicitly by the `AWS_ACCESS_KEY_ID` and `AWS_SECR
    region  = "us-west-2"
    version = "~> 2.40"
    }
-
-
+```
 #### Lambda
 
 This execution point handles the following actions:
