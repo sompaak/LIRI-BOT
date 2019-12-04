@@ -45,13 +45,19 @@ In order to execute the lambda execution point you must have the following IAM p
 #### Cloudwatch
 This execution point handles the following actions:
 
-Cloudtrail:
+CloudTrail:
 - Creates a cloudwatch log group for cloudtrail logs
-- assigns roles and policies for cloudtrail logs
-- enable CloudTrail to capture all compatible management events in a region and to write to a cloudwatch log group.
+- Assigns roles and policies for cloudtrail logs
+- Enable CloudTrail to capture all compatible management events in a region and to write to a cloudwatch log group.
 
+VPC-flow-logs:
+- Creates a cloudwatch log group for vpc flow logs
+- Move flowlogs to the cloudwatch log group
+- Assigns roles and permissions 
 
-
+Cloudwatch:
+- Creates permision for lambda function to be executed from cloudwatch
+- Creates subscription fileters for both log group to be streamed to the lambda function.
 
 In order to execute the cloudwatch execution point you must have the following IAM permissions:
 
