@@ -1,6 +1,8 @@
 # Table of Contents
 <!-- TOC -->
  * [Introduction](#introduction)
+ * [Compatibility](#Compatibility)
+ * [Requirements](#Requirements)
 <!-- TOC -->
 # Introduction
 
