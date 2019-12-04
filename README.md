@@ -43,6 +43,15 @@ In order to execute the lambda execution point you must have the following IAM p
 - `IAMFullAccess`
 
 #### Cloudwatch
+This execution point handles the following actions:
+
+Cloudtrail:
+- Creates a cloudwatch log group for cloudtrail logs
+- assigns roles and policies for cloudtrail logs
+- enable CloudTrail to capture all compatible management events in a region and to write to a cloudwatch log group.
+
+
+
 
 In order to execute the cloudwatch execution point you must have the following IAM permissions:
 
