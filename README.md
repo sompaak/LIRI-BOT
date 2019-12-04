@@ -6,7 +6,6 @@
     * [Terraform plugins](#Terraform-plugins)
     * [Execution points](Execution-points)
          * [Lambda](#Lambda)
-            *[Roles](#Roles)
          * [Cloudwatch](#Cloudwatch)
             
       
@@ -34,6 +33,14 @@ This module is meant for use with Terraform 0.12
 ##### Roles
 
 In order to execute the lambda execution point you must have the following IAM permissions:
+
+This execution point handles the following actions:
+
+- Creates an s3 bucket
+- uploads the lambda function zip file to the s3 bucket
+- Creates permisions for the lambda function to be executed
+- Creates lambda function
+
 
 - `AWSLambdaFullAccess`
 
