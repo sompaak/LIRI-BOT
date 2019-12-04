@@ -8,12 +8,12 @@ This module is meant for use with Terraform 0.12
 
 ## Requirements
 
-### Software
+### Terraform plugins
 - [Terraform](https://www.terraform.io/downloads.html) >= 0.12.x
 - terraform-provider-AWS plugin 2.40.x
 
-### Execution Points
+### Execution points
 
 #### Lambda
 
-##### Permissions  
+##### Roles
