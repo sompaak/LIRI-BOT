@@ -34,7 +34,7 @@ The region within the provide block must be provided.
    version = "~> 2.40"
    }
 ```
-### backend
+### Backend
 Region must be provided
  ```terraform
    terraform {
