@@ -18,5 +18,5 @@ This module is meant for use with Terraform 0.12
 
 #### Roles
 
-`roles/resourcemanager.projectCreator`
+`AWSLambdaFullAccess`
 
