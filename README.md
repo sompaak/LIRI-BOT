@@ -5,7 +5,9 @@
  * [Requirements](#Requirements)
     * [Terraform plugins](#Terraform-plugins)
     * [Execution points](Execution-points)
-         * [Terraform plugins](#Terraform-plugins)
+         * [lambda](#lambda)
+         * [cloudwatch](#cloudwatch)
+         
     
 <!-- TOC -->
 ## Introduction
