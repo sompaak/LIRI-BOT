@@ -5,23 +5,23 @@
  * [Requirements](#Requirements)
     * [Terraform plugins](#Terraform-plugins)
 <!-- TOC -->
-# Introduction
+## Introduction
 
 The terraform execution points lambda and cloudwatch allow AWS logs to be processed by a lambda function and be sent to Stackdriver for ingestion.
 
-# Compatibility
+## Compatibility
 
 This module is meant for use with Terraform 0.12
 
-# Requirements
+## Requirements
 
-## Terraform plugins
+### Terraform plugins
 - [Terraform](https://www.terraform.io/downloads.html) >= 0.12.x
 - terraform-provider-AWS plugin 2.40.x
 
-## Execution points
+### Execution points
 
-### Lambda
+#### Lambda
 
 In order to execute the lambda execution point you must have the following IAM permissions:
 
@@ -29,7 +29,7 @@ In order to execute the lambda execution point you must have the following IAM p
 
 - `IAMFullAccess`
 
-### Cloudwatch
+#### Cloudwatch
 
 In order to execute the cloudwatch execution point you must have the following IAM permissions:
 
