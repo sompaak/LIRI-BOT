@@ -6,7 +6,10 @@
     * [Terraform plugins](#Terraform-plugins)
     * [Execution points](Execution-points)
          * [Lambda](#Lambda)
+            *[Roles](#Roles)
          * [Cloudwatch](#Cloudwatch)
+            
+      
          
     
 <!-- TOC -->
@@ -27,6 +30,8 @@ This module is meant for use with Terraform 0.12
 ### Execution points
 
 #### Lambda
+
+##### Roles
 
 In order to execute the lambda execution point you must have the following IAM permissions:
 
