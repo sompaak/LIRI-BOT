@@ -3,6 +3,7 @@
  * [Introduction](#introduction)
  * [Compatibility](#Compatibility)
  * [Requirements](#Requirements)
+    * [Terraform plugins](#Terraform-plugins)
 <!-- TOC -->
 # Introduction
 
