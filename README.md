@@ -36,7 +36,8 @@ credentials to pass to these scripts. Credentials can be provided via two mechan
    
 1. Implicitly provided by the  `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables:
    ```terraform
-   AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY and  must be set in the environment before Terraform is run.
+   AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and  must be set in the environment before Terraform is run.
+   The region in the provider must be specified
    provider "aws" {
    region  = "us-west-2"
    version = "~> 2.40"
