@@ -4,7 +4,7 @@
  * [Compatibility](#Compatibility)
  * [Requirements](#Requirements)
     * [Terraform plugins](#Terraform-plugins)
-    * [Execution points](Execution points)
+    * [Execution points](Execution-points)
          * [Terraform plugins](#Terraform-plugins)
     
 <!-- TOC -->
