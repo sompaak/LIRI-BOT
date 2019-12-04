@@ -29,7 +29,7 @@ This module is meant for use with Terraform 0.12
 #### Specifying credentials
    
 Credentials must be provided Implicitly by the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables.
-The region within the provide block must be provided
+The region within the provide block must be provided.
    ```terraform
    AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and must be set in the environment before Terraform is run.
    provider "aws" {
