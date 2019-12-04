@@ -35,16 +35,15 @@ The region within the provide block must be provided.
    }
 ```
 ### backend
-
+Region must be provided
  ```terraform
-   Region must be provided
    terraform {
       backend "s3" {
          bucket = "mybucket"
          key    = "path/to/my/key"
          region = "us-east-1"
        }
-}
+   }
 ```
 
 
