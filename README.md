@@ -26,20 +26,20 @@ This module is meant for use with Terraform 0.12
 - [Terraform](https://www.terraform.io/downloads.html) >= 0.12.x
 - terraform-provider-AWS plugin 2.40.x
 
-### Execution points
-
 #### Specifying credentials
-
    
-Credentials must be provided Implicitly by the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables:
+Credentials must be provided Implicitly by the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables.
+The region within the provide block must be provided
    ```terraform
-   AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and  must be set in the environment before Terraform is run.
+   AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY and must be set in the environment before Terraform is run.
    The region in the provider must be specified.
    provider "aws" {
    region  = "us-west-2"
    version = "~> 2.40"
    }
 ```
+### Execution points
+
 #### Lambda
 
 This execution point handles the following actions:
