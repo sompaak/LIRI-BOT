@@ -4,6 +4,8 @@
  * [Compatibility](#Compatibility)
  * [Requirements](#Requirements)
     * [Terraform plugins](#Terraform-plugins)
+    * [Specifying credentials](Specifying-credentials)
+    * [Backend](Backend)
     * [Execution points](Execution-points)
          * [Lambda](#Lambda)
          * [Cloudwatch](#Cloudwatch)
