@@ -17,7 +17,7 @@ The terraform execution points lambda and cloudwatch allow AWS logs to be proces
 
 ## Compatibility
 
-This module is meant for use with Terraform 0.12
+This module is meant for use with Terraform 0.12.
 
 ## Requirements
 
@@ -37,7 +37,7 @@ The region within the provide block must be provided.
    }
 ```
 ### Backend
-Region must be provided
+Stores the remote statefiles in an existing GCS bucket.
  ```terraform
    terraform {
       backend "s3" {
@@ -54,10 +54,10 @@ Region must be provided
 #### Lambda
 
 This execution point handles the following actions:
-- Creates an s3 bucket
-- uploads the lambda function zip file to the s3 bucket
-- Creates permisions for the lambda function to be executed
-- Creates lambda function
+- Creates an s3 bucket.
+- Uploads the lambda function zip file to the s3 bucket.
+- Creates permisions for the lambda function to be executed.
+- Creates lambda function.
 
 In order to execute the lambda execution point you must have the following IAM permissions:
 
@@ -69,18 +69,19 @@ In order to execute the lambda execution point you must have the following IAM p
 This execution point handles the following actions:
 
 CloudTrail:
-- Creates a cloudwatch log group for cloudtrail logs
-- Assigns roles and policies for cloudtrail logs
+- Creates a cloudwatch log group for cloudtrail logs.
+- Assigns roles and policies for cloudtrail logs.
 - Enable CloudTrail to capture all compatible management events in a region and to write to a cloudwatch log group.
 
 VPC-flow-logs:
-- Creates a cloudwatch log group for vpc flow logs
-- Move flowlogs to the cloudwatch log group
-- Assigns roles and permissions 
+- Creates a cloudwatch log group for vpc flow logs.
+- Move flowlogs to the cloudwatch log group.
+- Assigns roles and permissions.
 
 Cloudwatch:
-- Creates permision for lambda function to be executed from cloudwatch
-- Creates subscription fileters for both log group to be streamed to the lambda function.
+- Creates permissions for lambda function to be executed from cloudwatch
+- Creates subscription filters for both log group to be streamed to the lambda function.
+- If cloud watch log groups already exists the arn of the log group needs to be provided in the required fields thithin the cloudwatch.tf file.
 
 In order to execute the cloudwatch execution point you must have the following IAM permissions:
 
