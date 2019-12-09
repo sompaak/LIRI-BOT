@@ -81,7 +81,7 @@ VPC-flow-logs:
 Cloudwatch:
 - Creates permissions for lambda function to be executed from cloudwatch
 - Creates subscription filters for both log group to be streamed to the lambda function.
-- If cloud watch log groups already exists the arn of the log group needs to be provided in the required fields thithin the cloudwatch.tf file.
+- If cloud watch log groups already exists the arn of the log group needs to be provided in the required fields within the cloudwatch.tf file.
 
 In order to execute the cloudwatch execution point you must have the following IAM permissions:
 
