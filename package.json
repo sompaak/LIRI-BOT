@@ -6,7 +6,7 @@
     "fs": "0.0.1-security",
     "inquirer": "^5.1.0",
     "node-spotify-api": "^1.0.7",
-    "request": "^2.83.0",
+    "request": "^2.88.2",
     "require": "^2.4.20",
     "twit": "^2.2.9",
     "twitter": "^1.7.1"
